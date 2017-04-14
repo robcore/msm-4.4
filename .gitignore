@@ -112,3 +112,14 @@ all.config
 
 # Kdevelop4
 *.kdev4
+
+#
+# Leavings from patching
+#
+*.rej
+*.patch
+
+#
+# Build directory
+#
+build/
