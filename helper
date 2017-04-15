@@ -30,7 +30,7 @@ DTB_TARGET="$BUILD_TARGET/dt.img"
 
 THREADS=$(grep -c ^processor /proc/cpuinfo)
 
-DEFCONFIG="libra_defconfig"
+DEFCONFIG="msm8994_defconfig"
 
 echo -e $red"Using $CROSS_COMPILE."$restore
 
