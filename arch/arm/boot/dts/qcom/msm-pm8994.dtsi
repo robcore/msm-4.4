@@ -356,7 +356,7 @@
 		#address-cells = <2>;
 		#size-cells = <0>;
 
-		pwm@b100 {
+		pm8994_pwm_1: pwm@b100 {
 			compatible = "qcom,qpnp-pwm";
 			reg = <0xb100 0x100>,
 			      <0xb042 0x7e>;
@@ -368,7 +368,7 @@
 			status = "disabled";
 		};
 
-		pwm@b200 {
+		pm8994_pwm_2: pwm@b200 {
 			compatible = "qcom,qpnp-pwm";
 			reg = <0xb200 0x100>,
 			      <0xb042 0x7e>;
@@ -380,7 +380,7 @@
 			status = "disabled";
 		};
 
-		pwm@b300 {
+		pm8994_pwm_3: pwm@b300 {
 			compatible = "qcom,qpnp-pwm";
 			reg = <0xb300 0x100>,
 			      <0xb042 0x7e>;
@@ -392,7 +392,7 @@
 			status = "disabled";
 		};
 
-		pwm@b400 {
+		pm8994_pwm_4: pwm@b400 {
 			compatible = "qcom,qpnp-pwm";
 			reg = <0xb400 0x100>,
 			      <0xb042 0x7e>;
@@ -404,7 +404,7 @@
 			status = "disabled";
 		};
 
-		pwm@b500 {
+		pm8994_pwm_5: pwm@b500 {
 			compatible = "qcom,qpnp-pwm";
 			reg = <0xb500 0x100>,
 			      <0xb042 0x7e>;
@@ -416,7 +416,7 @@
 			status = "disabled";
 		};
 
-		pwm@b600 {
+		pm8994_pwm_6: pwm@b600 {
 			compatible = "qcom,qpnp-pwm";
 			reg = <0xb600 0x100>,
 			      <0xb042 0x7e>;
