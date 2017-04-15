@@ -79,13 +79,30 @@ static inline void flush_tlb_all(void)
 	isb();
 }
 
+static inline bool msm8994_needs_tlbi_wa(void)
+{
+#ifdef CONFIG_ARCH_MSM8994_V1_TLBI_WA
+	extern int msm8994_req_tlbi_wa;
+	return msm8994_req_tlbi_wa;
+#else
+	return false;
+#endif
+}
+
 static inline void flush_tlb_mm(struct mm_struct *mm)
 {
-	unsigned long asid = ASID(mm) << 48;
+	if (msm8994_needs_tlbi_wa()) {
+		dsb(ishst);
+		asm("tlbi	vmalle1is");
+		dsb(ish);
+		isb();
+	} else {
+		unsigned long asid = (unsigned long)ASID(mm) << 48;
 
-	dsb(ishst);
-	asm("tlbi	aside1is, %0" : : "r" (asid));
-	dsb(ish);
+		dsb(ishst);
+		asm("tlbi	aside1is, %0" : : "r" (asid));
+		dsb(ish);
+	}
 }
 
 static inline void flush_tlb_page(struct vm_area_struct *vma,
