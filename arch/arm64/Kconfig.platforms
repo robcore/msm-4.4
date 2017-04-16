@@ -61,6 +61,13 @@ config ARCH_QCOM
 	help
 	  This enables support for the ARMv8 based Qualcomm chipsets.
 
+config ARCH_MSM8992
+	bool "Enable Support for Qualcomm MSM8992"
+	depends on ARCH_MSM
+	help
+	  Enable kernel support for the MSM8992 chipset. If you don't
+	  know what this is, you can safely say 'N' here.
+
 config ARCH_MSM8994
 	bool "Enable Support for Qualcomm MSM8994"
 	depends on ARCH_MSM
