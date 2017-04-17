@@ -70,7 +70,7 @@ config ARCH_MSM8992
 
 config ARCH_MSM8994
 	bool "Enable Support for Qualcomm MSM8994"
-	depends on ARCH_MSM
+	depends on ARCH_QCOM
 	help
 	  This enables support for the MSM8994 chipset. If you dont
 	  know what do here, say N
